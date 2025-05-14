@@ -1,6 +1,16 @@
+"use client";
+
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import { Target, Heart, Award, Users, Shield, Lightbulb } from "lucide-react";
 
 const VisionMissionContent = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
+
   const values = [
     {
       icon: <Heart className="h-12 w-12 text-blue-600" />,
@@ -35,13 +45,13 @@ const VisionMissionContent = () => {
   ];
 
   return (
-    <section className="py-16">
+    <section className="py-16 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="mb-20 grid grid-cols-1 gap-16 md:grid-cols-2">
           <div
-            className="flex flex-col items-center rounded-lg bg-white p-8 text-center shadow-lg dark:bg-gray-800"
-            data-animation="fade-left"
-            data-delay="0"
+            className="flex flex-col items-center rounded-lg bg-white p-8 text-center shadow-lg dark:bg-gray-800 transform-gpu"
+            data-aos="fade-left"
+            data-aos-delay="0"
           >
             <Target className="mb-6 h-16 w-16 text-blue-600" />
             <h2 className="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
@@ -57,9 +67,9 @@ const VisionMissionContent = () => {
           </div>
 
           <div
-            className="flex flex-col items-center rounded-lg bg-white p-8 text-center shadow-lg dark:bg-gray-800"
-            data-animation="fade-up"
-            data-delay="220"
+            className="flex flex-col items-center rounded-lg bg-white p-8 text-center shadow-lg dark:bg-gray-800 transform-gpu"
+            data-aos="fade-up"
+            data-aos-delay="220"
           >
             <Heart className="mb-6 h-16 w-16 text-blue-600" />
             <h2 className="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
@@ -84,10 +94,10 @@ const VisionMissionContent = () => {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {values.map((value, index) => (
               <div
-                data-animation="fade-up"
-                data-delay="220"
+                data-aos="fade-up"
+                data-aos-delay="220"
                 key={index}
-                className="flex flex-col items-center rounded-lg bg-white p-6 text-center shadow-md transition-transform duration-300 hover:-translate-y-2 dark:bg-gray-800"
+                className="flex flex-col items-center rounded-lg bg-white p-6 text-center shadow-md transition-transform duration-300 hover:-translate-y-2 dark:bg-gray-800 transform-gpu"
               >
                 <div className="mb-4">{value.icon}</div>
                 <h3 className="mb-3 text-xl font-semibold text-gray-900 dark:text-white">
@@ -103,25 +113,25 @@ const VisionMissionContent = () => {
 
         <div className="rounded-lg bg-blue-50 p-8 dark:bg-blue-950">
           <h2
-            className="mb-6 text-center text-3xl font-bold text-gray-900 dark:text-white"
-            data-animation="fade-up"
-            data-delay="220"
+            className="mb-6 text-center text-3xl font-bold text-gray-900 dark:text-white transform-gpu"
+            data-aos="fade-up"
+            data-aos-delay="220"
           >
             Our Commitment to You
           </h2>
           <div className="mb-8 mx-auto h-1 w-24 bg-blue-600"></div>
           <div className="mx-auto max-w-3xl space-y-6 text-center">
             <p
-              className="text-lg text-gray-700 dark:text-gray-300"
-              data-animation="fade-right"
-              data-delay="220"
+              className="text-lg text-gray-700 dark:text-gray-300 transform-gpu transform-gpu"
+              data-aos="fade-right"
+              data-aos-delay="220"
             >
               At MediCare Hospital, we are committed to:
             </p>
             <ul
-              className="space-y-4 text-left text-lg text-gray-700 dark:text-gray-300"
-              data-animation="fade-left"
-              data-delay="220"
+              className="space-y-4 text-left text-lg text-gray-700 dark:text-gray-300 transform-gpu"
+              data-aos="fade-left"
+              data-aos-delay="220"
             >
               <li className="flex items-start">
                 <span className="mr-2 text-blue-600">•</span>

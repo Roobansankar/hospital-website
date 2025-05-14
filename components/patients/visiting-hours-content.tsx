@@ -68,13 +68,13 @@ const VisitingHoursContent = () => {
   ];
 
   return (
-    <section className="py-16">
+    <section className="py-16 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="mb-16">
           <h2
-            className="mb-6 text-center text-3xl font-bold text-gray-900 dark:text-white"
+            className="mb-6 text-center text-3xl font-bold text-gray-900 dark:text-white transform-gpu"
             data-aos="fade-left"
-            data-aos-delay="350"
+            data-aos-delay="300"
             // data-aos-anchor-placement="top-center"
           >
             Visiting Hours by Department
@@ -83,9 +83,9 @@ const VisitingHoursContent = () => {
 
           <div className="overflow-x-auto">
             <table
-              className="w-full border-collapse rounded-lg bg-white shadow-md dark:bg-gray-800"
+              className="w-full border-collapse rounded-lg bg-white shadow-md dark:bg-gray-800 transform-gpu"
               data-aos="fade-up"
-              data-aos-delay="350"
+              data-aos-delay="300"
               // data-aos-anchor-placement="top-center"
             >
               <thead>
@@ -125,8 +125,8 @@ const VisitingHoursContent = () => {
           <div>
             <h2
               className="mb-6 text-2xl font-bold text-gray-900 dark:text-white"
-              data-animation="fade-left"
-              data-delay="300"
+              data-aos="fade-left"
+              data-aos-delay="300"
             >
               Visitor Guidelines
             </h2>
@@ -135,9 +135,9 @@ const VisitingHoursContent = () => {
               {guidelines.map((guideline, index) => (
                 <li
                   key={index}
-                  className="flex items-start"
-                  data-animation="fade-up"
-                  data-delay="300"
+                  className="flex items-start transform-gpu"
+                  data-aos="fade-right"
+                  data-aos-delay="300"
                 >
                   <span className="mr-2 text-blue-600">•</span>
                   <span className="text-gray-700 dark:text-gray-300">
@@ -151,10 +151,18 @@ const VisitingHoursContent = () => {
           <div className="space-y-6">
             <Alert variant="default">
               <Clock className="h-4 w-4" />
-              <AlertTitle data-aos="fade-right" data-aos-delay="350">
+              <AlertTitle
+                className="transform-gpu"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
                 Visiting Hours May Change
               </AlertTitle>
-              <AlertDescription data-aos="fade-up" data-aos-delay="350">
+              <AlertDescription
+                className="transform-gpu"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
                 Please note that visiting hours may be adjusted based on patient
                 needs or hospital circumstances. Always check with the nursing
                 station for the most current information.
@@ -163,8 +171,9 @@ const VisitingHoursContent = () => {
 
             <Alert
               variant="destructive"
-              data-animation="fade-up"
-              data-delay="300"
+              data-aos="fade-up"
+              data-aos-delay="300"
+              className="transform-gpu"
             >
               <AlertTriangle className="h-4 w-4" />
               <AlertTitle>COVID-19 Precautions</AlertTitle>
@@ -177,9 +186,9 @@ const VisitingHoursContent = () => {
 
             <Alert
               variant="default"
-              className="border-blue-600 text-blue-600"
-              data-animation="fade-up"
-              data-delay="300"
+              className="border-blue-600 text-blue-600 transform-gpu"
+              data-aos="fade-up"
+              data-aos-delay="300"
             >
               <Info className="h-4 w-4" />
               <AlertTitle>Virtual Visits</AlertTitle>
@@ -194,17 +203,17 @@ const VisitingHoursContent = () => {
 
         <div className="rounded-lg bg-blue-50 p-8 dark:bg-blue-950">
           <h2
-            className="mb-6 text-center text-2xl font-bold text-gray-900 dark:text-white"
-            data-animation="fade-left"
-            data-delay="300"
+            className="mb-6 text-center text-2xl font-bold text-gray-900 dark:text-white transform-gpu"
+            data-aos="fade-left"
+            data-aos-delay="300"
           >
             Visitor Amenities
           </h2>
           <div className="mb-8 mx-auto h-1 w-24 bg-blue-600"></div>
           <div
             className="grid grid-cols-1 gap-8 md:grid-cols-3"
-            data-animation="fade-right"
-            data-delay="300"
+            data-aos="fade-right"
+            data-aos-delay="300"
           >
             <div className="rounded-lg bg-white p-6 shadow-md dark:bg-gray-800">
               <h3 className="mb-3 text-xl font-semibold text-gray-900 dark:text-white">

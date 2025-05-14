@@ -1,16 +1,18 @@
-import DepartmentHero from "@/components/departments/department-hero"
-import DepartmentContent from "@/components/departments/department-content"
+import DepartmentHero from "@/components/departments/department-hero";
+import DepartmentContent from "@/components/departments/department-content";
 
 export const metadata = {
   title: "Neurology Department | MediCare Hospital",
   description: "Learn about our Neurology Department and the services we offer",
-}
+};
 
 export default function NeurologyPage() {
   const departmentData = {
     name: "Neurology",
-    description: "Specialized care for disorders of the brain, spinal cord, and nervous system",
-    image: "/placeholder.svg?height=600&width=1200",
+    description:
+      "Specialized care for disorders of the brain, spinal cord, and nervous system",
+    image:
+      "https://careandcurehospital.co.in/wp-content/uploads/2022/02/neurology-manu-hospital-1024x468.jpg",
     overview:
       "Our Neurology Department provides comprehensive care for patients with neurological disorders affecting the brain, spinal cord, and nervous system. Our team of experienced neurologists, neurosurgeons, and specialized healthcare professionals utilizes advanced diagnostic tools and innovative treatment approaches to address a wide range of neurological conditions, from common disorders to complex neurological diseases.",
     services: [
@@ -71,12 +73,15 @@ export default function NeurologyPage() {
         specialization: "Headache and Pain Management",
       },
     ],
-  }
+  };
 
   return (
     <main className="min-h-screen">
-      <DepartmentHero name={departmentData.name} description={departmentData.description} />
+      <DepartmentHero
+        name={departmentData.name}
+        description={departmentData.description}
+      />
       <DepartmentContent department={departmentData} />
     </main>
-  )
+  );
 }

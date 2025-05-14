@@ -1,16 +1,18 @@
-import DepartmentHero from "@/components/departments/department-hero"
-import DepartmentContent from "@/components/departments/department-content"
+import DepartmentHero from "@/components/departments/department-hero";
+import DepartmentContent from "@/components/departments/department-content";
 
 export const metadata = {
   title: "Orthopedics Department | MediCare Hospital",
-  description: "Learn about our Orthopedics Department and the services we offer",
-}
+  description:
+    "Learn about our Orthopedics Department and the services we offer",
+};
 
 export default function OrthopedicsPage() {
   const departmentData = {
     name: "Orthopedics",
     description: "Specialized care for musculoskeletal conditions and injuries",
-    image: "/placeholder.svg?height=600&width=1200",
+    image:
+      "https://www.rumcsi.org/wp-content/uploads/2020/09/rumc-orthopedic-surgery-banner.jpg",
     overview:
       "Our Orthopedics Department provides comprehensive care for conditions affecting the musculoskeletal system, including bones, joints, ligaments, tendons, muscles, and nerves. Our team of orthopedic surgeons, sports medicine specialists, and rehabilitation experts utilizes advanced techniques and technologies to diagnose and treat a wide range of orthopedic conditions, from common injuries to complex reconstructive procedures.",
     services: [
@@ -71,12 +73,15 @@ export default function OrthopedicsPage() {
         specialization: "Pediatric Orthopedics",
       },
     ],
-  }
+  };
 
   return (
     <main className="min-h-screen">
-      <DepartmentHero name={departmentData.name} description={departmentData.description} />
+      <DepartmentHero
+        name={departmentData.name}
+        description={departmentData.description}
+      />
       <DepartmentContent department={departmentData} />
     </main>
-  )
+  );
 }

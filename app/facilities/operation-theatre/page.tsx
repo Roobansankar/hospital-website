@@ -1,16 +1,17 @@
-import FacilityHero from "@/components/facilities/facility-hero"
-import FacilityContent from "@/components/facilities/facility-content"
+import FacilityHero from "@/components/facilities/facility-hero";
+import FacilityContent from "@/components/facilities/facility-content";
 
 export const metadata = {
   title: "Operation Theatre | MediCare Hospital",
   description: "Learn about our state-of-the-art Operation Theatres",
-}
+};
 
 export default function OperationTheatrePage() {
   const facilityData = {
     title: "Operation Theatre",
-    description: "Our advanced surgical suites equipped with cutting-edge technology for all types of procedures.",
-    image: "/placeholder.svg?height=600&width=1200",
+    description:
+      "Our advanced surgical suites equipped with cutting-edge technology for all types of procedures.",
+    image: "https://www.irishospital.co.in/wp-content/uploads/2016/10/119.jpg",
     content: [
       {
         title: "State-of-the-Art Surgical Suites",
@@ -41,12 +42,15 @@ export default function OperationTheatrePage() {
       "Specialized surgical lighting for optimal visibility",
       "Dedicated pre-operative and post-operative care areas",
     ],
-  }
+  };
 
   return (
     <main className="min-h-screen">
-      <FacilityHero title={facilityData.title} description={facilityData.description} />
+      <FacilityHero
+        title={facilityData.title}
+        description={facilityData.description}
+      />
       <FacilityContent facility={facilityData} />
     </main>
-  )
+  );
 }

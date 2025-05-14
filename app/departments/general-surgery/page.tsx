@@ -1,16 +1,18 @@
-import DepartmentHero from "@/components/departments/department-hero"
-import DepartmentContent from "@/components/departments/department-content"
+import DepartmentHero from "@/components/departments/department-hero";
+import DepartmentContent from "@/components/departments/department-content";
 
 export const metadata = {
   title: "General Surgery Department | MediCare Hospital",
-  description: "Learn about our General Surgery Department and the services we offer",
-}
+  description:
+    "Learn about our General Surgery Department and the services we offer",
+};
 
 export default function GeneralSurgeryPage() {
   const departmentData = {
     name: "General Surgery",
     description: "Comprehensive surgical care for a wide range of conditions",
-    image: "/placeholder.svg?height=600&width=1200",
+    image:
+      "https://www.velammalhospital.com/images/department/General%20Surgery.png",
     overview:
       "Our General Surgery Department provides comprehensive surgical care for a wide range of conditions affecting the abdomen, digestive tract, endocrine system, and other organs. Our team of experienced surgeons utilizes advanced surgical techniques, including minimally invasive and robotic-assisted approaches, to deliver optimal outcomes with faster recovery times. We are committed to providing personalized surgical care with a focus on patient safety, comfort, and satisfaction.",
     services: [
@@ -71,12 +73,15 @@ export default function GeneralSurgeryPage() {
         specialization: "Gastrointestinal Surgery",
       },
     ],
-  }
+  };
 
   return (
     <main className="min-h-screen">
-      <DepartmentHero name={departmentData.name} description={departmentData.description} />
+      <DepartmentHero
+        name={departmentData.name}
+        description={departmentData.description}
+      />
       <DepartmentContent department={departmentData} />
     </main>
-  )
+  );
 }

@@ -1,16 +1,19 @@
-import DepartmentHero from "@/components/departments/department-hero"
-import DepartmentContent from "@/components/departments/department-content"
+import DepartmentHero from "@/components/departments/department-hero";
+import DepartmentContent from "@/components/departments/department-content";
 
 export const metadata = {
   title: "Pediatrics Department | MediCare Hospital",
-  description: "Learn about our Pediatrics Department and the services we offer",
-}
+  description:
+    "Learn about our Pediatrics Department and the services we offer",
+};
 
 export default function PediatricsPage() {
   const departmentData = {
     name: "Pediatrics",
-    description: "Comprehensive healthcare services for infants, children, and adolescents",
-    image: "/placeholder.svg?height=600&width=1200",
+    description:
+      "Comprehensive healthcare services for infants, children, and adolescents",
+    image:
+      "https://careandcurehospital.co.in/wp-content/uploads/2022/02/Pediatrics-Maanuhospital.jpg",
     overview:
       "Our Pediatrics Department provides comprehensive healthcare services for children from birth through adolescence. Our team of pediatricians, pediatric specialists, and child-friendly healthcare professionals is dedicated to providing compassionate, age-appropriate care in a welcoming environment designed specifically for young patients. We focus not only on treating childhood illnesses but also on preventive care, growth monitoring, and supporting healthy development.",
     services: [
@@ -71,12 +74,15 @@ export default function PediatricsPage() {
         specialization: "Pediatric Neurology",
       },
     ],
-  }
+  };
 
   return (
     <main className="min-h-screen">
-      <DepartmentHero name={departmentData.name} description={departmentData.description} />
+      <DepartmentHero
+        name={departmentData.name}
+        description={departmentData.description}
+      />
       <DepartmentContent department={departmentData} />
     </main>
-  )
+  );
 }

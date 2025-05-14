@@ -11,7 +11,8 @@ export default function ICUPage() {
     title: "Intensive Care Unit",
     description:
       "Our state-of-the-art Intensive Care Unit provides specialized care for critically ill patients.",
-    image: "/placeholder.svg?height=600&width=1200",
+    image:
+      "https://i.pinimg.com/originals/ed/95/de/ed95de0425012c08a8edbf1d47cbf36f.jpg",
     content: [
       {
         title: "Advanced Monitoring Systems",

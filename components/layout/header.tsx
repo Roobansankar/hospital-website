@@ -300,6 +300,11 @@ const Header = () => {
         { title: "General Surgery", href: "/departments/general-surgery" },
       ],
     },
+    {
+      title: "Contact",
+      href: "/contact",
+      dropdown: false,
+    },
   ];
 
   return (
@@ -360,9 +365,11 @@ const Header = () => {
           </nav>
 
           <div className="hidden lg:block">
-            <Button className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800">
-              Book Appointment
-            </Button>
+            <Link href="/booking">
+              <Button className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800">
+                Book Appointment
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -456,9 +463,11 @@ const Header = () => {
               )}
             </nav>
             <div className="mt-6">
-              <Button className="w-full bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800">
-                Book Appointment
-              </Button>
+              <Link href="/booking" onClick={closeMenu}>
+                <Button className="w-full bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800">
+                  Book Appointment
+                </Button>
+              </Link>
             </div>
           </div>
         )}

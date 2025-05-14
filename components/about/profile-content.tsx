@@ -7,11 +7,8 @@ import Image from "next/image";
 
 const ProfileContent = () => {
   useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-      easing: "ease-in-out",
-    });
+    AOS.init({ duration: 1000, once: true, easing: "ease-in-out" });
+    AOS.refresh();
   }, []);
 
   const milestones = [
@@ -54,13 +51,13 @@ const ProfileContent = () => {
   ];
 
   return (
-    <section className="py-16">
+    <section className="py-16 overflow-hidden">
       <div className="container mx-auto px-4">
         <div
-          className="mb-16 grid grid-cols-1 gap-12 md:grid-cols-2"
+          className="mb-16 grid grid-cols-1 gap-12 md:grid-cols-2 transform-gpu"
           data-aos="fade-up"
         >
-          <div data-animation="fade-right">
+          <div data-aos="fade-right" className="transform-gpu">
             <h2 className="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
               Our History
             </h2>
@@ -87,11 +84,11 @@ const ProfileContent = () => {
             </p>
           </div>
           <div
-            className="relative h-[300px] overflow-hidden rounded-lg md:h-[400px]"
-            data-animation="fade-left"
+            className="relative h-[300px] overflow-hidden rounded-lg md:h-[400px] transform-gpu"
+            data-aos="fade-left"
           >
             <Image
-              src="/placeholder.svg?height=800&width=1200"
+              src="https://watermark.lovepik.com/photo/40176/4710.jpg_wh1200.jpg"
               alt="Hospital History"
               fill
               className="object-cover"
@@ -101,8 +98,8 @@ const ProfileContent = () => {
 
         <div className="mb-16">
           <h2
-            className="mb-6 text-center text-3xl font-bold text-gray-900 dark:text-white"
-            data-animation="fade-up"
+            className="mb-6 text-center text-3xl font-bold text-gray-900 dark:text-white transform-gpu"
+            data-aos="fade-up"
           >
             Our Journey
           </h2>
@@ -115,9 +112,9 @@ const ProfileContent = () => {
                   key={index}
                   className={`relative flex ${
                     index % 2 === 0 ? "flex-row" : "flex-row-reverse"
-                  } items-center`}
-                  data-animation={index % 2 === 0 ? "fade-right" : "fade-left"}
-                  data-delay={(index * 100).toString()}
+                  } items-center transform-gpu`}
+                  data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
+                  data-aos-delay={(index * 100).toString()}
                 >
                   <div
                     className={`w-1/2 ${
@@ -146,17 +143,17 @@ const ProfileContent = () => {
 
         <div className="mb-16">
           <h2
-            className="mb-6 text-center text-3xl font-bold text-gray-900 dark:text-white"
-            data-animation="fade-up"
+            className="mb-6 text-center text-3xl font-bold text-gray-900 dark:text-white transform-gpu"
+            data-aos="fade-up"
           >
             Key Achievements
           </h2>
           <div className="mb-12 mx-auto h-1 w-24 bg-blue-600"></div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             <div
-              className="rounded-lg bg-white p-6 shadow-md dark:bg-gray-800"
-              data-animation="fade-up"
-              data-delay="0"
+              className="rounded-lg bg-white p-6 shadow-md dark:bg-gray-800 transform-gpu"
+              data-aos="fade-up"
+              data-aos-delay="0"
             >
               <div className="mb-4 text-3xl font-bold text-blue-600">25+</div>
               <h3 className="mb-2 text-xl font-semibold text-gray-900 dark:text-white">
@@ -167,9 +164,9 @@ const ProfileContent = () => {
               </p>
             </div>
             <div
-              className="rounded-lg bg-white p-6 shadow-md dark:bg-gray-800"
-              data-animation="fade-up"
-              data-delay="100"
+              className="rounded-lg bg-white p-6 shadow-md dark:bg-gray-800 transform-gpu"
+              data-aos="fade-up"
+              data-aos-delay="100"
             >
               <div className="mb-4 text-3xl font-bold text-blue-600">100+</div>
               <h3 className="mb-2 text-xl font-semibold text-gray-900 dark:text-white">
@@ -181,9 +178,9 @@ const ProfileContent = () => {
               </p>
             </div>
             <div
-              className="rounded-lg bg-white p-6 shadow-md dark:bg-gray-800"
-              data-animation="fade-up"
-              data-delay="200"
+              className="rounded-lg bg-white p-6 shadow-md dark:bg-gray-800 transform-gpu"
+              data-aos="fade-up"
+              data-aos-delay="200"
             >
               <div className="mb-4 text-3xl font-bold text-blue-600">500+</div>
               <h3 className="mb-2 text-xl font-semibold text-gray-900 dark:text-white">
@@ -195,9 +192,9 @@ const ProfileContent = () => {
               </p>
             </div>
             <div
-              className="rounded-lg bg-white p-6 shadow-md dark:bg-gray-800"
-              data-animation="fade-up"
-              data-delay="300"
+              className="rounded-lg bg-white p-6 shadow-md dark:bg-gray-800 transform-gpu"
+              data-aos="fade-up"
+              data-aos-delay="300"
             >
               <div className="mb-4 text-3xl font-bold text-blue-600">
                 50,000+
@@ -210,9 +207,9 @@ const ProfileContent = () => {
               </p>
             </div>
             <div
-              className="rounded-lg bg-white p-6 shadow-md dark:bg-gray-800"
-              data-animation="fade-up"
-              data-delay="400"
+              className="rounded-lg bg-white p-6 shadow-md dark:bg-gray-800 transform-gpu"
+              data-aos="fade-up"
+              data-aos-delay="400"
             >
               <div className="mb-4 text-3xl font-bold text-blue-600">15+</div>
               <h3 className="mb-2 text-xl font-semibold text-gray-900 dark:text-white">
@@ -223,9 +220,9 @@ const ProfileContent = () => {
               </p>
             </div>
             <div
-              className="rounded-lg bg-white p-6 shadow-md dark:bg-gray-800"
-              data-animation="fade-up"
-              data-delay="500"
+              className="rounded-lg bg-white p-6 shadow-md dark:bg-gray-800 transform-gpu"
+              data-aos="fade-up"
+              data-aos-delay="500"
             >
               <div className="mb-4 text-3xl font-bold text-blue-600">20+</div>
               <h3 className="mb-2 text-xl font-semibold text-gray-900 dark:text-white">
@@ -239,7 +236,7 @@ const ProfileContent = () => {
           </div>
         </div>
 
-        <div data-animation="fade-up">
+        <div data-aos="fade-up" className="transform-gpu">
           <h2 className="mb-6 text-center text-3xl font-bold text-gray-900 dark:text-white">
             Our Commitment
           </h2>

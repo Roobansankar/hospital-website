@@ -1,9 +1,16 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { useState } from "react";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import {
   Dialog,
   DialogContent,
@@ -11,38 +18,60 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-import { Calendar, Clock, GraduationCap, Award } from "lucide-react"
+} from "@/components/ui/dialog";
+import { Calendar, Clock, GraduationCap, Award } from "lucide-react";
 
 interface Doctor {
-  id: number
-  name: string
-  specialty: string
-  image: string
-  education: string
-  experience: string
-  description: string
+  id: number;
+  name: string;
+  specialty: string;
+  image: string;
+  education: string;
+  experience: string;
+  description: string;
 }
 
 interface DoctorCardProps {
-  doctor: Doctor
+  doctor: Doctor;
 }
 
 const DoctorCard = ({ doctor }: DoctorCardProps) => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
       <Card className="overflow-hidden transition-all duration-300 hover:shadow-lg">
-        <div className="relative h-64 w-full">
-          <Image src={doctor.image || "/placeholder.svg"} alt={doctor.name} fill className="object-cover" />
+        {/* <div className="relative h-64 w-full"> */}
+        {/* <Image
+            src={doctor.image || "/placeholder.svg"}
+            style={{ height: "200px" }}
+            alt={doctor.name}
+            fill
+            className="object-cover"
+          /> */}
+
+        {/* </div> */}
+
+        <div className="rounded-lg overflow-hidden w-full h-[300px] relative">
+          <Image
+            src={doctor.image || "/placeholder.svg"}
+            alt={doctor.name}
+            width={300}
+            height={300}
+            className="object-cover object-top w-full h-full"
+          />
         </div>
+
         <CardHeader className="pb-2">
           <CardTitle>{doctor.name}</CardTitle>
-          <CardDescription className="text-blue-600 dark:text-blue-400">{doctor.specialty}</CardDescription>
+          <CardDescription className="text-blue-600 dark:text-blue-400">
+            {doctor.specialty}
+          </CardDescription>
         </CardHeader>
         <CardContent>
-          <p className="line-clamp-3 text-sm text-gray-600 dark:text-gray-400">{doctor.description}</p>
+          <p className="line-clamp-3 text-sm text-gray-600 dark:text-gray-400">
+            {doctor.description}
+          </p>
         </CardContent>
         <CardFooter>
           <Dialog open={isOpen} onOpenChange={setIsOpen}>
@@ -54,24 +83,37 @@ const DoctorCard = ({ doctor }: DoctorCardProps) => {
             <DialogContent className="max-h-[90vh] overflow-y-auto sm:max-w-[600px]">
               <DialogHeader>
                 <DialogTitle>{doctor.name}</DialogTitle>
-                <DialogDescription className="text-blue-600 dark:text-blue-400">{doctor.specialty}</DialogDescription>
+                <DialogDescription className="text-blue-600 dark:text-blue-400">
+                  {doctor.specialty}
+                </DialogDescription>
               </DialogHeader>
               <div className="grid gap-6 py-4">
                 <div className="relative mx-auto h-64 w-64 overflow-hidden rounded-full">
-                  <Image src={doctor.image || "/placeholder.svg"} alt={doctor.name} fill className="object-cover" />
+                  <Image
+                    src={doctor.image || "/placeholder.svg"}
+                    alt={doctor.name}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
 
                 <div className="space-y-4">
-                  <p className="text-gray-700 dark:text-gray-300">{doctor.description}</p>
+                  <p className="text-gray-700 dark:text-gray-300">
+                    {doctor.description}
+                  </p>
 
                   <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                     <div className="flex items-center gap-2">
                       <GraduationCap className="h-5 w-5 text-blue-600" />
-                      <span className="text-sm text-gray-600 dark:text-gray-400">{doctor.education}</span>
+                      <span className="text-sm text-gray-600 dark:text-gray-400">
+                        {doctor.education}
+                      </span>
                     </div>
                     <div className="flex items-center gap-2">
                       <Award className="h-5 w-5 text-blue-600" />
-                      <span className="text-sm text-gray-600 dark:text-gray-400">{doctor.experience}</span>
+                      <span className="text-sm text-gray-600 dark:text-gray-400">
+                        {doctor.experience}
+                      </span>
                     </div>
                   </div>
 
@@ -109,7 +151,7 @@ const DoctorCard = ({ doctor }: DoctorCardProps) => {
         </CardFooter>
       </Card>
     </>
-  )
-}
+  );
+};
 
-export default DoctorCard
+export default DoctorCard;

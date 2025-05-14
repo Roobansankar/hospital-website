@@ -1,16 +1,18 @@
-import FacilityHero from "@/components/facilities/facility-hero"
-import FacilityContent from "@/components/facilities/facility-content"
+import FacilityHero from "@/components/facilities/facility-hero";
+import FacilityContent from "@/components/facilities/facility-content";
 
 export const metadata = {
   title: "Emergency Department | MediCare Hospital",
   description: "Learn about our 24/7 emergency medical services",
-}
+};
 
 export default function EmergencyPage() {
   const facilityData = {
     title: "Emergency Department",
-    description: "Our 24/7 emergency medical services providing immediate care for critical conditions.",
-    image: "/placeholder.svg?height=600&width=1200",
+    description:
+      "Our 24/7 emergency medical services providing immediate care for critical conditions.",
+    image:
+      "https://ft3.ca/sites/default/files/styles/project_thumb/public/projects/dauphin-rhc-ed-625-3-street-sw-image-1.jpg?h=7f44e64f&itok=s2IEJtn4",
     content: [
       {
         title: "Rapid Response Teams",
@@ -42,12 +44,15 @@ export default function EmergencyPage() {
       "Direct access to diagnostic imaging",
       "Dedicated emergency operating rooms",
     ],
-  }
+  };
 
   return (
     <main className="min-h-screen">
-      <FacilityHero title={facilityData.title} description={facilityData.description} />
+      <FacilityHero
+        title={facilityData.title}
+        description={facilityData.description}
+      />
       <FacilityContent facility={facilityData} />
     </main>
-  )
+  );
 }

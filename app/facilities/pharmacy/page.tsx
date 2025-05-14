@@ -1,16 +1,17 @@
-import FacilityHero from "@/components/facilities/facility-hero"
-import FacilityContent from "@/components/facilities/facility-content"
+import FacilityHero from "@/components/facilities/facility-hero";
+import FacilityContent from "@/components/facilities/facility-content";
 
 export const metadata = {
   title: "Pharmacy | MediCare Hospital",
   description: "Learn about our comprehensive pharmacy services",
-}
+};
 
 export default function PharmacyPage() {
   const facilityData = {
     title: "Pharmacy",
-    description: "Our comprehensive pharmacy services providing medications and expert pharmaceutical care.",
-    image: "/placeholder.svg?height=600&width=1200",
+    description:
+      "Our comprehensive pharmacy services providing medications and expert pharmaceutical care.",
+    image: "https://medpharm.ie/wp-content/uploads/hospital-pharmacy-jobs.jpeg",
     content: [
       {
         title: "24/7 Pharmacy Services",
@@ -41,12 +42,15 @@ export default function PharmacyPage() {
       "Patient education and counseling",
       "Home delivery options for discharged patients",
     ],
-  }
+  };
 
   return (
     <main className="min-h-screen">
-      <FacilityHero title={facilityData.title} description={facilityData.description} />
+      <FacilityHero
+        title={facilityData.title}
+        description={facilityData.description}
+      />
       <FacilityContent facility={facilityData} />
     </main>
-  )
+  );
 }

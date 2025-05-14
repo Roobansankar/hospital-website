@@ -1,16 +1,18 @@
-import DepartmentHero from "@/components/departments/department-hero"
-import DepartmentContent from "@/components/departments/department-content"
+import DepartmentHero from "@/components/departments/department-hero";
+import DepartmentContent from "@/components/departments/department-content";
 
 export const metadata = {
   title: "Cardiology Department | MediCare Hospital",
-  description: "Learn about our Cardiology Department and the services we offer",
-}
+  description:
+    "Learn about our Cardiology Department and the services we offer",
+};
 
 export default function CardiologyPage() {
   const departmentData = {
     name: "Cardiology",
-    description: "Comprehensive cardiac care for diagnosis, treatment, and management of heart conditions",
-    image: "/placeholder.svg?height=600&width=1200",
+    description:
+      "Comprehensive cardiac care for diagnosis, treatment, and management of heart conditions",
+    image: "https://islandhospital.com/wp-content/uploads/2023/01/2-1.jpg",
     overview:
       "Our Cardiology Department is equipped with state-of-the-art technology and staffed by experienced cardiologists, providing comprehensive care for all types of heart conditions. From preventive cardiology to advanced interventional procedures, we offer a full spectrum of cardiac services to ensure the best possible outcomes for our patients.",
     services: [
@@ -71,12 +73,15 @@ export default function CardiologyPage() {
         specialization: "Preventive Cardiology",
       },
     ],
-  }
+  };
 
   return (
     <main className="min-h-screen">
-      <DepartmentHero name={departmentData.name} description={departmentData.description} />
+      <DepartmentHero
+        name={departmentData.name}
+        description={departmentData.description}
+      />
       <DepartmentContent department={departmentData} />
     </main>
-  )
+  );
 }

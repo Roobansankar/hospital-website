@@ -1,16 +1,18 @@
-import FacilityHero from "@/components/facilities/facility-hero"
-import FacilityContent from "@/components/facilities/facility-content"
+import FacilityHero from "@/components/facilities/facility-hero";
+import FacilityContent from "@/components/facilities/facility-content";
 
 export const metadata = {
   title: "Diagnostic Services | MediCare Hospital",
   description: "Learn about our comprehensive diagnostic and imaging services",
-}
+};
 
 export default function DiagnosticPage() {
   const facilityData = {
     title: "Diagnostic Services",
-    description: "Our comprehensive laboratory and imaging services for accurate diagnosis and treatment planning.",
-    image: "/placeholder.svg?height=600&width=1200",
+    description:
+      "Our comprehensive laboratory and imaging services for accurate diagnosis and treatment planning.",
+    image:
+      "https://santiamhospital.org/wp-content/uploads/2019/09/Diagnostic-Imaging.jpg",
     content: [
       {
         title: "Advanced Imaging Technology",
@@ -42,12 +44,15 @@ export default function DiagnosticPage() {
       "Digital pathology services",
       "Cardiac stress testing facilities",
     ],
-  }
+  };
 
   return (
     <main className="min-h-screen">
-      <FacilityHero title={facilityData.title} description={facilityData.description} />
+      <FacilityHero
+        title={facilityData.title}
+        description={facilityData.description}
+      />
       <FacilityContent facility={facilityData} />
     </main>
-  )
+  );
 }
