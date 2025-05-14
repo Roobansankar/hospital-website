@@ -1,7 +1,20 @@
-import { Clock, AlertTriangle, Info } from "lucide-react"
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+"use client";
+
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { Clock, AlertTriangle, Info } from "lucide-react";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 const VisitingHoursContent = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: "ease-in-out",
+    });
+    AOS.refresh();
+  }, []);
   const visitingHours = [
     {
       department: "General Wards",
@@ -19,13 +32,15 @@ const VisitingHoursContent = () => {
       department: "Pediatric Ward",
       hours: "10:00 AM - 8:00 PM",
       days: "All days",
-      notes: "Parents/guardians allowed 24/7, other visitors during visiting hours only",
+      notes:
+        "Parents/guardians allowed 24/7, other visitors during visiting hours only",
     },
     {
       department: "Maternity Ward",
       hours: "10:00 AM - 12:00 PM & 4:00 PM - 8:00 PM",
       days: "All days",
-      notes: "Spouse/partner allowed 24/7, other visitors during visiting hours only",
+      notes:
+        "Spouse/partner allowed 24/7, other visitors during visiting hours only",
     },
     {
       department: "Psychiatric Ward",
@@ -39,7 +54,7 @@ const VisitingHoursContent = () => {
       days: "As advised by medical staff",
       notes: "Special protocols apply, please consult with nursing staff",
     },
-  ]
+  ];
 
   const guidelines = [
     "All visitors must check in at the reception desk and obtain a visitor's pass",
@@ -50,19 +65,29 @@ const VisitingHoursContent = () => {
     "Limit the number of personal items brought for patients",
     "Smoking is strictly prohibited throughout the hospital premises",
     "Turn mobile phones to silent mode in patient areas",
-  ]
+  ];
 
   return (
     <section className="py-16">
       <div className="container mx-auto px-4">
         <div className="mb-16">
-          <h2 className="mb-6 text-center text-3xl font-bold text-gray-900 dark:text-white">
+          <h2
+            className="mb-6 text-center text-3xl font-bold text-gray-900 dark:text-white"
+            data-aos="fade-left"
+            data-aos-delay="350"
+            // data-aos-anchor-placement="top-center"
+          >
             Visiting Hours by Department
           </h2>
           <div className="mb-8 mx-auto h-1 w-24 bg-blue-600"></div>
 
           <div className="overflow-x-auto">
-            <table className="w-full border-collapse rounded-lg bg-white shadow-md dark:bg-gray-800">
+            <table
+              className="w-full border-collapse rounded-lg bg-white shadow-md dark:bg-gray-800"
+              data-aos="fade-up"
+              data-aos-delay="350"
+              // data-aos-anchor-placement="top-center"
+            >
               <thead>
                 <tr className="bg-blue-600 text-white">
                   <th className="border-b p-4 text-left">Department</th>
@@ -73,11 +98,22 @@ const VisitingHoursContent = () => {
               </thead>
               <tbody>
                 {visitingHours.map((item, index) => (
-                  <tr key={index} className="border-b last:border-b-0 dark:border-gray-700">
-                    <td className="p-4 font-medium text-gray-900 dark:text-white">{item.department}</td>
-                    <td className="p-4 text-gray-700 dark:text-gray-300">{item.hours}</td>
-                    <td className="p-4 text-gray-700 dark:text-gray-300">{item.days}</td>
-                    <td className="p-4 text-gray-700 dark:text-gray-300">{item.notes}</td>
+                  <tr
+                    key={index}
+                    className="border-b last:border-b-0 dark:border-gray-700"
+                  >
+                    <td className="p-4 font-medium text-gray-900 dark:text-white">
+                      {item.department}
+                    </td>
+                    <td className="p-4 text-gray-700 dark:text-gray-300">
+                      {item.hours}
+                    </td>
+                    <td className="p-4 text-gray-700 dark:text-gray-300">
+                      {item.days}
+                    </td>
+                    <td className="p-4 text-gray-700 dark:text-gray-300">
+                      {item.notes}
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -87,13 +123,26 @@ const VisitingHoursContent = () => {
 
         <div className="mb-16 grid grid-cols-1 gap-8 md:grid-cols-2">
           <div>
-            <h2 className="mb-6 text-2xl font-bold text-gray-900 dark:text-white">Visitor Guidelines</h2>
+            <h2
+              className="mb-6 text-2xl font-bold text-gray-900 dark:text-white"
+              data-animation="fade-left"
+              data-delay="300"
+            >
+              Visitor Guidelines
+            </h2>
             <div className="mb-6 h-1 w-24 bg-blue-600"></div>
             <ul className="space-y-4">
               {guidelines.map((guideline, index) => (
-                <li key={index} className="flex items-start">
+                <li
+                  key={index}
+                  className="flex items-start"
+                  data-animation="fade-up"
+                  data-delay="300"
+                >
                   <span className="mr-2 text-blue-600">•</span>
-                  <span className="text-gray-700 dark:text-gray-300">{guideline}</span>
+                  <span className="text-gray-700 dark:text-gray-300">
+                    {guideline}
+                  </span>
                 </li>
               ))}
             </ul>
@@ -102,69 +151,103 @@ const VisitingHoursContent = () => {
           <div className="space-y-6">
             <Alert variant="default">
               <Clock className="h-4 w-4" />
-              <AlertTitle>Visiting Hours May Change</AlertTitle>
-              <AlertDescription>
-                Please note that visiting hours may be adjusted based on patient needs or hospital circumstances. Always
-                check with the nursing station for the most current information.
+              <AlertTitle data-aos="fade-right" data-aos-delay="350">
+                Visiting Hours May Change
+              </AlertTitle>
+              <AlertDescription data-aos="fade-up" data-aos-delay="350">
+                Please note that visiting hours may be adjusted based on patient
+                needs or hospital circumstances. Always check with the nursing
+                station for the most current information.
               </AlertDescription>
             </Alert>
 
-            <Alert variant="destructive">
+            <Alert
+              variant="destructive"
+              data-animation="fade-up"
+              data-delay="300"
+            >
               <AlertTriangle className="h-4 w-4" />
               <AlertTitle>COVID-19 Precautions</AlertTitle>
               <AlertDescription>
-                Due to ongoing health concerns, additional restrictions may apply. All visitors must wear masks and may
-                be subject to temperature checks and screening questions.
+                Due to ongoing health concerns, additional restrictions may
+                apply. All visitors must wear masks and may be subject to
+                temperature checks and screening questions.
               </AlertDescription>
             </Alert>
 
-            <Alert variant="default" className="border-blue-600 text-blue-600">
+            <Alert
+              variant="default"
+              className="border-blue-600 text-blue-600"
+              data-animation="fade-up"
+              data-delay="300"
+            >
               <Info className="h-4 w-4" />
               <AlertTitle>Virtual Visits</AlertTitle>
               <AlertDescription className="text-gray-700 dark:text-gray-300">
-                We encourage the use of video calls for patients to connect with family and friends who cannot visit in
-                person. Our staff can assist with setting up these calls.
+                We encourage the use of video calls for patients to connect with
+                family and friends who cannot visit in person. Our staff can
+                assist with setting up these calls.
               </AlertDescription>
             </Alert>
           </div>
         </div>
 
         <div className="rounded-lg bg-blue-50 p-8 dark:bg-blue-950">
-          <h2 className="mb-6 text-center text-2xl font-bold text-gray-900 dark:text-white">Visitor Amenities</h2>
+          <h2
+            className="mb-6 text-center text-2xl font-bold text-gray-900 dark:text-white"
+            data-animation="fade-left"
+            data-delay="300"
+          >
+            Visitor Amenities
+          </h2>
           <div className="mb-8 mx-auto h-1 w-24 bg-blue-600"></div>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+          <div
+            className="grid grid-cols-1 gap-8 md:grid-cols-3"
+            data-animation="fade-right"
+            data-delay="300"
+          >
             <div className="rounded-lg bg-white p-6 shadow-md dark:bg-gray-800">
-              <h3 className="mb-3 text-xl font-semibold text-gray-900 dark:text-white">Cafeteria</h3>
+              <h3 className="mb-3 text-xl font-semibold text-gray-900 dark:text-white">
+                Cafeteria
+              </h3>
               <p className="mb-2 text-gray-700 dark:text-gray-300">
-                Located on the ground floor, our cafeteria offers a variety of meals, snacks, and beverages.
+                Located on the ground floor, our cafeteria offers a variety of
+                meals, snacks, and beverages.
               </p>
               <p className="text-sm text-gray-600 dark:text-gray-400">
                 <strong>Hours:</strong> 7:00 AM - 9:00 PM daily
               </p>
             </div>
             <div className="rounded-lg bg-white p-6 shadow-md dark:bg-gray-800">
-              <h3 className="mb-3 text-xl font-semibold text-gray-900 dark:text-white">Waiting Lounges</h3>
+              <h3 className="mb-3 text-xl font-semibold text-gray-900 dark:text-white">
+                Waiting Lounges
+              </h3>
               <p className="mb-2 text-gray-700 dark:text-gray-300">
-                Comfortable waiting areas are available on each floor with seating, Wi-Fi, and charging stations.
+                Comfortable waiting areas are available on each floor with
+                seating, Wi-Fi, and charging stations.
               </p>
               <p className="text-sm text-gray-600 dark:text-gray-400">
                 <strong>Access:</strong> 24/7 for visitors
               </p>
             </div>
             <div className="rounded-lg bg-white p-6 shadow-md dark:bg-gray-800">
-              <h3 className="mb-3 text-xl font-semibold text-gray-900 dark:text-white">Gift Shop</h3>
+              <h3 className="mb-3 text-xl font-semibold text-gray-900 dark:text-white">
+                Gift Shop
+              </h3>
               <p className="mb-2 text-gray-700 dark:text-gray-300">
-                Our gift shop offers flowers, cards, gifts, toiletries, and other essentials for patients.
+                Our gift shop offers flowers, cards, gifts, toiletries, and
+                other essentials for patients.
               </p>
               <p className="text-sm text-gray-600 dark:text-gray-400">
-                <strong>Hours:</strong> 9:00 AM - 7:00 PM (Mon-Sat), 11:00 AM - 5:00 PM (Sun)
+                <strong>Hours:</strong> 9:00 AM - 7:00 PM (Mon-Sat), 11:00 AM -
+                5:00 PM (Sun)
               </p>
             </div>
           </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default VisitingHoursContent
+export default VisitingHoursContent;

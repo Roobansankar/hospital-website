@@ -1,15 +1,16 @@
-import FacilityHero from "@/components/facilities/facility-hero"
-import FacilityContent from "@/components/facilities/facility-content"
+import FacilityHero from "@/components/facilities/facility-hero";
+import FacilityContent from "@/components/facilities/facility-content";
 
 export const metadata = {
   title: "ICU | MediCare Hospital",
   description: "Learn about our state-of-the-art Intensive Care Unit",
-}
+};
 
 export default function ICUPage() {
   const facilityData = {
     title: "Intensive Care Unit",
-    description: "Our state-of-the-art Intensive Care Unit provides specialized care for critically ill patients.",
+    description:
+      "Our state-of-the-art Intensive Care Unit provides specialized care for critically ill patients.",
     image: "/placeholder.svg?height=600&width=1200",
     content: [
       {
@@ -41,12 +42,15 @@ export default function ICUPage() {
       "Telemedicine capabilities for specialist consultations",
       "Dedicated pharmacy services",
     ],
-  }
+  };
 
   return (
     <main className="min-h-screen">
-      <FacilityHero title={facilityData.title} description={facilityData.description} />
+      <FacilityHero
+        title={facilityData.title}
+        description={facilityData.description}
+      />
       <FacilityContent facility={facilityData} />
     </main>
-  )
+  );
 }
