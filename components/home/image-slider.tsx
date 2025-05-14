@@ -1,58 +1,58 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Image from "next/image"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const ImageSlider = () => {
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const slides = [
     {
-      url: "/placeholder.svg?height=600&width=1200",
+      url: "https://i.pinimg.com/originals/63/6e/17/636e17db16bb81b63b8e6cc30546ebf9.jpg",
       alt: "Hospital Building",
       caption: "Our Modern Hospital Facility",
     },
     {
-      url: "/placeholder.svg?height=600&width=1200",
+      url: "https://hospitalarchitects.in/sites/default/files/2022-09/All%20The%20Keys%20To%20The%20Correct%20Design%20And%20Planning%20Of%20An%20Operating%20Theatre.jpg",
       alt: "Operation Theatre",
       caption: "State-of-the-art Operation Theatres",
     },
     {
-      url: "/placeholder.svg?height=600&width=1200",
+      url: "https://1.bp.blogspot.com/-JbkztpDv0hE/XwAoLwwjQHI/AAAAAAAABqw/Y-p36M5x58kVKe_hbkxaTEIuoiHbwr_VACK4BGAsYHg/s1280/edited_ots2.jpg",
       alt: "Patient Room",
       caption: "Comfortable Patient Rooms",
     },
     {
-      url: "/placeholder.svg?height=600&width=1200",
+      url: "https://www.missouripartnership.com/wp-content/uploads/2021/12/iStock-1346675584.jpg",
       alt: "Laboratory",
       caption: "Advanced Diagnostic Laboratory",
     },
-  ]
+  ];
 
   const prevSlide = () => {
-    const isFirstSlide = currentIndex === 0
-    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1
-    setCurrentIndex(newIndex)
-  }
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+  };
 
   const nextSlide = () => {
-    const isLastSlide = currentIndex === slides.length - 1
-    const newIndex = isLastSlide ? 0 : currentIndex + 1
-    setCurrentIndex(newIndex)
-  }
+    const isLastSlide = currentIndex === slides.length - 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  };
 
   const goToSlide = (slideIndex: number) => {
-    setCurrentIndex(slideIndex)
-  }
+    setCurrentIndex(slideIndex);
+  };
 
   useEffect(() => {
     const slideInterval = setInterval(() => {
-      nextSlide()
-    }, 5000)
+      nextSlide();
+    }, 5000);
 
-    return () => clearInterval(slideInterval)
-  }, [currentIndex])
+    return () => clearInterval(slideInterval);
+  }, [currentIndex]);
 
   return (
     <section className="py-16">
@@ -91,7 +91,10 @@ const ImageSlider = () => {
           >
             <div className="absolute flex h-full w-full">
               {slides.map((slide, slideIndex) => (
-                <div key={slideIndex} className="relative h-full w-full flex-shrink-0">
+                <div
+                  key={slideIndex}
+                  className="relative h-full w-full flex-shrink-0"
+                >
                   <Image
                     src={slide.url || "/placeholder.svg"}
                     alt={slide.alt}
@@ -100,7 +103,9 @@ const ImageSlider = () => {
                     priority={slideIndex === 0}
                   />
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 text-white">
-                    <h3 className="text-xl font-semibold md:text-2xl">{slide.caption}</h3>
+                    <h3 className="text-xl font-semibold md:text-2xl">
+                      {slide.caption}
+                    </h3>
                   </div>
                 </div>
               ))}
@@ -113,7 +118,9 @@ const ImageSlider = () => {
                 key={slideIndex}
                 onClick={() => goToSlide(slideIndex)}
                 className={`h-2 w-8 rounded-full transition-all ${
-                  slideIndex === currentIndex ? "bg-white" : "bg-white/50 hover:bg-white/70"
+                  slideIndex === currentIndex
+                    ? "bg-white"
+                    : "bg-white/50 hover:bg-white/70"
                 }`}
                 aria-label={`Go to slide ${slideIndex + 1}`}
               ></button>
@@ -122,7 +129,7 @@ const ImageSlider = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default ImageSlider
+export default ImageSlider;
