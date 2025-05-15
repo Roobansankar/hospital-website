@@ -55,7 +55,7 @@ const ImageSlider = () => {
   }, [currentIndex]);
 
   return (
-    <section className="py-16">
+    <section className="py-16 overflow-hidden">
       <div className="container mx-auto px-4">
         {/* <h2
           className="mb-8 text-center text-3xl font-bold text-gray-900 dark:text-white custom-text-shadow md:text-4xl"
@@ -64,14 +64,14 @@ const ImageSlider = () => {
           Our Facilities
         </h2> */}
         <h2
-          className="mb-8 text-center text-3xl font-bold text-gray-900 dark:text-white custom-text-shadow md:text-4xl"
+          className="mb-8 text-center text-3xl font-bold text-gray-900 dark:text-white custom-text-shadow md:text-4xl transform-gpu"
           data-aos="fade-up"
         >
           Our <span className="text-orange-600">Facilities</span>
         </h2>
 
         <div
-          className="relative mx-auto h-[300px] max-w-5xl overflow-hidden rounded-xl md:h-[400px] lg:h-[500px]"
+          className="relative mx-auto h-[300px] max-w-5xl overflow-hidden rounded-xl md:h-[400px] lg:h-[500px] transform-gpu"
           data-aos="fade-up"
           data-aos-delay="100"
         >

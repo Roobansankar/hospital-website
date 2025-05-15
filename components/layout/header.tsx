@@ -272,8 +272,8 @@ const Header = () => {
       dropdown: true,
       items: [
         { title: "Visiting Hours", href: "/patients/visiting-hours" },
-        { title: "Inpatient Information", href: "/patients/inpatient" },
-        { title: "Outpatient Services", href: "/patients/outpatient" },
+        // { title: "Inpatient Information", href: "/patients/inpatient" },
+        // { title: "Outpatient Services", href: "/patients/outpatient" },
       ],
     },
     {

@@ -46,7 +46,7 @@ const HighlightsSection = () => {
   ];
 
   return (
-    <section className="bg-gray-100 py-16 dark:bg-gray-900">
+    <section className="bg-gray-100 py-16 dark:bg-gray-900 overflow-hidden">
       <div className="container mx-auto px-4">
         {/* <h2
           className="mb-12 text-center text-3xl font-bold text-gray-900 dark:text-white md:text-4xl"
@@ -55,7 +55,7 @@ const HighlightsSection = () => {
           Why Choose MediCare
         </h2> */}
         <h2
-          className="mb-12 text-center text-3xl font-bold text-slate-800 drop-shadow-md dark:text-white md:text-4xl"
+          className="mb-12 text-center text-3xl font-bold text-slate-800 drop-shadow-md dark:text-white md:text-4xl transform-gpu"
           data-aos="fade-right"
         >
           Why Choose{" "}
@@ -84,7 +84,7 @@ const HighlightsSection = () => {
           {highlights.map((highlight, index) => (
             <div
               key={index}
-              className="flex flex-col items-center rounded-lg bg-orange-100 p-6 text-center shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:bg-orange-200 hover:shadow-xl cursor-pointer dark:bg-orange-900 dark:hover:bg-orange-800"
+              className="flex flex-col items-center rounded-lg bg-orange-100 p-6 text-center shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:bg-orange-200 hover:shadow-xl cursor-pointer dark:bg-orange-900 dark:hover:bg-orange-800 transform-gpu"
               data-aos="fade-left"
               data-aos-delay={highlight.delay || 0}
             >

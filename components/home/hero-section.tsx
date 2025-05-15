@@ -89,14 +89,22 @@ const HeroSection = () => {
                 Book Appointment
               </Button>
             </Link>
-            <Button
-              size="lg"
-              variant="outline"
-              // className="border-white text-white hover:bg-white/10"
-              className="bg-white text-blue-700 hover:bg-blue-50"
-            >
-              <Link href="/doctors">Find a Doctor</Link>
-            </Button>
+            <Link href="/doctors">
+              <Button
+                size="lg"
+                className="bg-white text-blue-700 hover:bg-blue-50"
+              >
+                Find a Doctor
+              </Button>
+            </Link>
+            {/* <Button
+              size="lg" */}
+            {/* // variant="outline" */}
+            {/* // className="border-white text-white hover:bg-white/10" */}
+            {/* className="bg-white text-blue-700 hover:bg-blue-50" */}
+            {/* > */}
+            {/* <Link href="/doctors">Find a Doctor</Link> */}
+            {/* </Button> */}
           </div>
         </div>
       </div>

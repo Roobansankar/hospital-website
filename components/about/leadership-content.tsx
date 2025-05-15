@@ -1,7 +1,21 @@
-import Image from "next/image"
-import { Linkedin, Twitter, Mail } from "lucide-react"
+"use client";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+import Image from "next/image";
+import { Linkedin, Twitter, Mail } from "lucide-react";
+import { useEffect } from "react";
 
 const LeadershipContent = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: "ease-in-out",
+    });
+    AOS.refresh();
+  }, []);
   const executiveTeam = [
     {
       name: "Dr. Richard Anderson",
@@ -39,7 +53,7 @@ const LeadershipContent = () => {
         email: "robert.chen@medicarehospital.com",
       },
     },
-  ]
+  ];
 
   const boardMembers = [
     {
@@ -70,7 +84,7 @@ const LeadershipContent = () => {
       bio: "James brings extensive experience in healthcare technology and innovation. His expertise has been instrumental in modernizing the hospital's technological infrastructure and implementing digital health solutions.",
       education: "MS - Massachusetts Institute of Technology",
     },
-  ]
+  ];
 
   const departmentHeads = [
     {
@@ -101,19 +115,161 @@ const LeadershipContent = () => {
       bio: "Dr. Patel has transformed our neurology department with her expertise in neurological disorders and innovative treatment approaches. Her research in neurodegenerative diseases has received international recognition.",
       education: "MD, PhD - University of Chicago",
     },
-  ]
+  ];
 
   return (
-    <section className="py-16">
+    // <section className="py-16 overflow-hidden">
+    //   <div className="container mx-auto px-4">
+    //     <div className="mb-16">
+    //       <h2 className="mb-6 text-center text-3xl font-bold text-gray-900 dark:text-white">
+    //         Executive Leadership
+    //       </h2>
+    //       <div className="mb-12 mx-auto h-1 w-24 bg-blue-600"></div>
+    //       <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
+    //         {executiveTeam.map((leader, index) => (
+    //           <div
+    //             key={index}
+    //             className="flex flex-col items-center rounded-lg bg-white p-6 text-center shadow-lg dark:bg-gray-800"
+    //           >
+    //             <div className="mb-4 h-48 w-48 overflow-hidden rounded-full">
+    //               <Image
+    //                 src={leader.image || "/placeholder.svg"}
+    //                 alt={leader.name}
+    //                 width={200}
+    //                 height={200}
+    //                 className="h-full w-full object-cover"
+    //               />
+    //             </div>
+    //             <h3 className="mb-1 text-xl font-bold text-gray-900 dark:text-white">
+    //               {leader.name}
+    //             </h3>
+    //             <p className="mb-4 text-blue-600 dark:text-blue-400">
+    //               {leader.position}
+    //             </p>
+    //             <p className="mb-4 text-sm text-gray-600 dark:text-gray-400">
+    //               {leader.education}
+    //             </p>
+    //             <p className="mb-6 text-gray-700 dark:text-gray-300">
+    //               {leader.bio}
+    //             </p>
+    //             <div className="flex space-x-4">
+    //               <a
+    //                 href={leader.social.linkedin}
+    //                 className="text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400"
+    //                 aria-label="LinkedIn"
+    //               >
+    //                 <Linkedin className="h-5 w-5" />
+    //               </a>
+    //               <a
+    //                 href={leader.social.twitter}
+    //                 className="text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400"
+    //                 aria-label="Twitter"
+    //               >
+    //                 <Twitter className="h-5 w-5" />
+    //               </a>
+    //               <a
+    //                 href={`mailto:${leader.social.email}`}
+    //                 className="text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400"
+    //                 aria-label="Email"
+    //               >
+    //                 <Mail className="h-5 w-5" />
+    //               </a>
+    //             </div>
+    //           </div>
+    //         ))}
+    //       </div>
+    //     </div>
+
+    //     <div className="mb-16">
+    //       <h2 className="mb-6 text-center text-3xl font-bold text-gray-900 dark:text-white">
+    //         Board of Directors
+    //       </h2>
+    //       <div className="mb-12 mx-auto h-1 w-24 bg-blue-600"></div>
+    //       <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+    //         {boardMembers.map((member, index) => (
+    //           <div
+    //             key={index}
+    //             className="flex flex-col items-center rounded-lg bg-white p-6 text-center shadow-md dark:bg-gray-800"
+    //           >
+    //             <div className="mb-4 h-32 w-32 overflow-hidden rounded-full">
+    //               <Image
+    //                 src={member.image || "/placeholder.svg"}
+    //                 alt={member.name}
+    //                 width={150}
+    //                 height={150}
+    //                 className="h-full w-full object-cover"
+    //               />
+    //             </div>
+    //             <h3 className="mb-1 text-lg font-bold text-gray-900 dark:text-white">
+    //               {member.name}
+    //             </h3>
+    //             <p className="mb-3 text-blue-600 dark:text-blue-400">
+    //               {member.position}
+    //             </p>
+    //             <p className="mb-4 text-xs text-gray-600 dark:text-gray-400">
+    //               {member.education}
+    //             </p>
+    //             <p className="text-sm text-gray-700 dark:text-gray-300">
+    //               {member.bio}
+    //             </p>
+    //           </div>
+    //         ))}
+    //       </div>
+    //     </div>
+
+    //     <div>
+    //       <h2 className="mb-6 text-center text-3xl font-bold text-gray-900 dark:text-white">
+    //         Department Heads
+    //       </h2>
+    //       <div className="mb-12 mx-auto h-1 w-24 bg-blue-600"></div>
+    //       <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+    //         {departmentHeads.map((head, index) => (
+    //           <div
+    //             key={index}
+    //             className="flex flex-col items-center rounded-lg bg-white p-6 text-center shadow-md dark:bg-gray-800"
+    //           >
+    //             <div className="mb-4 h-32 w-32 overflow-hidden rounded-full">
+    //               <Image
+    //                 src={head.image || "/placeholder.svg"}
+    //                 alt={head.name}
+    //                 width={150}
+    //                 height={150}
+    //                 className="h-full w-full object-cover"
+    //               />
+    //             </div>
+    //             <h3 className="mb-1 text-lg font-bold text-gray-900 dark:text-white">
+    //               {head.name}
+    //             </h3>
+    //             <p className="mb-3 text-blue-600 dark:text-blue-400">
+    //               {head.position}
+    //             </p>
+    //             <p className="mb-4 text-xs text-gray-600 dark:text-gray-400">
+    //               {head.education}
+    //             </p>
+    //             <p className="text-sm text-gray-700 dark:text-gray-300">
+    //               {head.bio}
+    //             </p>
+    //           </div>
+    //         ))}
+    //       </div>
+    //     </div>
+    //   </div>
+    // </section>
+    <section className="py-16 overflow-hidden">
       <div className="container mx-auto px-4">
-        <div className="mb-16">
-          <h2 className="mb-6 text-center text-3xl font-bold text-gray-900 dark:text-white">Executive Leadership</h2>
+        {/* Executive Leadership */}
+        <div className="mb-16" data-aos="fade-up" className="transform-gpu">
+          <h2 className="mb-6 text-center text-3xl font-bold text-gray-900 dark:text-white">
+            Executive Leadership
+          </h2>
           <div className="mb-12 mx-auto h-1 w-24 bg-blue-600"></div>
           <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
             {executiveTeam.map((leader, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center rounded-lg bg-white p-6 text-center shadow-lg dark:bg-gray-800"
+                className="flex flex-col items-center rounded-lg bg-white p-6 text-center shadow-lg dark:bg-gray-800 transform-gpu"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
               >
                 <div className="mb-4 h-48 w-48 overflow-hidden rounded-full">
                   <Image
@@ -124,10 +280,18 @@ const LeadershipContent = () => {
                     className="h-full w-full object-cover"
                   />
                 </div>
-                <h3 className="mb-1 text-xl font-bold text-gray-900 dark:text-white">{leader.name}</h3>
-                <p className="mb-4 text-blue-600 dark:text-blue-400">{leader.position}</p>
-                <p className="mb-4 text-sm text-gray-600 dark:text-gray-400">{leader.education}</p>
-                <p className="mb-6 text-gray-700 dark:text-gray-300">{leader.bio}</p>
+                <h3 className="mb-1 text-xl font-bold text-gray-900 dark:text-white">
+                  {leader.name}
+                </h3>
+                <p className="mb-4 text-blue-600 dark:text-blue-400">
+                  {leader.position}
+                </p>
+                <p className="mb-4 text-sm text-gray-600 dark:text-gray-400">
+                  {leader.education}
+                </p>
+                <p className="mb-6 text-gray-700 dark:text-gray-300">
+                  {leader.bio}
+                </p>
                 <div className="flex space-x-4">
                   <a
                     href={leader.social.linkedin}
@@ -156,14 +320,19 @@ const LeadershipContent = () => {
           </div>
         </div>
 
-        <div className="mb-16">
-          <h2 className="mb-6 text-center text-3xl font-bold text-gray-900 dark:text-white">Board of Directors</h2>
+        {/* Board of Directors */}
+        <div className="mb-16" data-aos="fade-up" className="transform-gpu">
+          <h2 className="mb-6 text-center text-3xl font-bold text-gray-900 dark:text-white">
+            Board of Directors
+          </h2>
           <div className="mb-12 mx-auto h-1 w-24 bg-blue-600"></div>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {boardMembers.map((member, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center rounded-lg bg-white p-6 text-center shadow-md dark:bg-gray-800"
+                className="flex flex-col items-center rounded-lg bg-white p-6 text-center shadow-md dark:bg-gray-800 transform-gpu"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
               >
                 <div className="mb-4 h-32 w-32 overflow-hidden rounded-full">
                   <Image
@@ -174,23 +343,36 @@ const LeadershipContent = () => {
                     className="h-full w-full object-cover"
                   />
                 </div>
-                <h3 className="mb-1 text-lg font-bold text-gray-900 dark:text-white">{member.name}</h3>
-                <p className="mb-3 text-blue-600 dark:text-blue-400">{member.position}</p>
-                <p className="mb-4 text-xs text-gray-600 dark:text-gray-400">{member.education}</p>
-                <p className="text-sm text-gray-700 dark:text-gray-300">{member.bio}</p>
+                <h3 className="mb-1 text-lg font-bold text-gray-900 dark:text-white">
+                  {member.name}
+                </h3>
+                <p className="mb-3 text-blue-600 dark:text-blue-400">
+                  {member.position}
+                </p>
+                <p className="mb-4 text-xs text-gray-600 dark:text-gray-400">
+                  {member.education}
+                </p>
+                <p className="text-sm text-gray-700 dark:text-gray-300">
+                  {member.bio}
+                </p>
               </div>
             ))}
           </div>
         </div>
 
-        <div>
-          <h2 className="mb-6 text-center text-3xl font-bold text-gray-900 dark:text-white">Department Heads</h2>
+        {/* Department Heads */}
+        <div data-aos="fade-up" className="transform-gpu">
+          <h2 className="mb-6 text-center text-3xl font-bold text-gray-900 dark:text-white">
+            Department Heads
+          </h2>
           <div className="mb-12 mx-auto h-1 w-24 bg-blue-600"></div>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {departmentHeads.map((head, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center rounded-lg bg-white p-6 text-center shadow-md dark:bg-gray-800"
+                className="flex flex-col items-center rounded-lg bg-white p-6 text-center shadow-md dark:bg-gray-800 transform-gpu"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
               >
                 <div className="mb-4 h-32 w-32 overflow-hidden rounded-full">
                   <Image
@@ -201,17 +383,25 @@ const LeadershipContent = () => {
                     className="h-full w-full object-cover"
                   />
                 </div>
-                <h3 className="mb-1 text-lg font-bold text-gray-900 dark:text-white">{head.name}</h3>
-                <p className="mb-3 text-blue-600 dark:text-blue-400">{head.position}</p>
-                <p className="mb-4 text-xs text-gray-600 dark:text-gray-400">{head.education}</p>
-                <p className="text-sm text-gray-700 dark:text-gray-300">{head.bio}</p>
+                <h3 className="mb-1 text-lg font-bold text-gray-900 dark:text-white">
+                  {head.name}
+                </h3>
+                <p className="mb-3 text-blue-600 dark:text-blue-400">
+                  {head.position}
+                </p>
+                <p className="mb-4 text-xs text-gray-600 dark:text-gray-400">
+                  {head.education}
+                </p>
+                <p className="text-sm text-gray-700 dark:text-gray-300">
+                  {head.bio}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default LeadershipContent
+export default LeadershipContent;
