@@ -57,12 +57,19 @@ const ImageSlider = () => {
   return (
     <section className="py-16">
       <div className="container mx-auto px-4">
-        <h2
-          className="mb-8 text-center text-3xl font-bold text-gray-900 dark:text-white md:text-4xl"
+        {/* <h2
+          className="mb-8 text-center text-3xl font-bold text-gray-900 dark:text-white custom-text-shadow md:text-4xl"
           data-aos="fade-up"
         >
           Our Facilities
+        </h2> */}
+        <h2
+          className="mb-8 text-center text-3xl font-bold text-gray-900 dark:text-white custom-text-shadow md:text-4xl"
+          data-aos="fade-up"
+        >
+          Our <span className="text-orange-600">Facilities</span>
         </h2>
+
         <div
           className="relative mx-auto h-[300px] max-w-5xl overflow-hidden rounded-xl md:h-[400px] lg:h-[500px]"
           data-aos="fade-up"

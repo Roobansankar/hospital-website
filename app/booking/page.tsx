@@ -297,8 +297,8 @@ const BookAppointment = () => {
           className="mx-auto max-w-2xl bg-white p-8 shadow-lg rounded-lg transform-gpu"
           data-aos="zoom-in"
         >
-          <h2 className="mb-6 text-3xl font-bold text-center text-blue-700">
-            Book an Appointment
+          <h2 className="mb-6 text-3xl font-bold text-center text-blue-700 custom-text-shadow">
+            Book an <span className="text-orange-600"> Appointment</span>
           </h2>
 
           <form onSubmit={handleSubmit} className="space-y-6">

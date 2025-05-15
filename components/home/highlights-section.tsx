@@ -48,20 +48,44 @@ const HighlightsSection = () => {
   return (
     <section className="bg-gray-100 py-16 dark:bg-gray-900">
       <div className="container mx-auto px-4">
-        <h2
+        {/* <h2
           className="mb-12 text-center text-3xl font-bold text-gray-900 dark:text-white md:text-4xl"
-          data-aos="fade-up"
+          data-aos="fade-right"
         >
           Why Choose MediCare
+        </h2> */}
+        <h2
+          className="mb-12 text-center text-3xl font-bold text-slate-800 drop-shadow-md dark:text-white md:text-4xl"
+          data-aos="fade-right"
+        >
+          Why Choose{" "}
+          <span className="text-orange-600 drop-shadow-sm">MediCare</span>
         </h2>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+
+        {/* <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {highlights.map((highlight, index) => (
             <div
               key={index}
               className="flex flex-col items-center rounded-lg bg-white p-6 text-center shadow-lg transition-transform duration-300 hover:-translate-y-2 dark:bg-gray-800"
-              // data-animation="fade-up"
-              // data-delay={highlight.delay}
-              data-aos="fade-up"
+              data-aos="fade-left"
+              data-aos-delay={highlight.delay || 0}
+            >
+              <div className="mb-4">{highlight.icon}</div>
+              <h3 className="mb-3 text-xl font-semibold text-gray-900 dark:text-white">
+                {highlight.title}
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300">
+                {highlight.description}
+              </p>
+            </div>
+          ))}
+        </div> */}
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+          {highlights.map((highlight, index) => (
+            <div
+              key={index}
+              className="flex flex-col items-center rounded-lg bg-orange-100 p-6 text-center shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:bg-orange-200 hover:shadow-xl cursor-pointer dark:bg-orange-900 dark:hover:bg-orange-800"
+              data-aos="fade-left"
               data-aos-delay={highlight.delay || 0}
             >
               <div className="mb-4">{highlight.icon}</div>

@@ -102,8 +102,8 @@ const ContactInfo = () => {
       data-aos-duration="1000"
       className="mx-auto max-w-3xl px-4 py-12 transform-gpu overflow-hidden text-center"
     >
-      <h2 className="mb-6 text-2xl font-bold text-gray-900 dark:text-white">
-        Contact Information
+      <h2 className="mb-6 text-2xl font-bold text-gray-900 dark:text-white custom-text-shadow ">
+        Contact <span className="text-orange-600">Information</span>
       </h2>
       <div className="mb-10 mx-auto h-1 w-24 bg-blue-600"></div>
 

@@ -49,9 +49,14 @@ const WelcomeSection = () => {
     <section className="bg-white py-16 dark:bg-gray-950 overflow-x-hidden">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-3xl text-center" data-aos="fade-left">
-          <h2 className="mb-6 text-3xl font-bold text-gray-900 dark:text-white md:text-4xl">
+          {/* <h2 className="mb-6 text-3xl font-bold text-gray-900 dark:text-white md:text-4xl">
             Welcome to MediCare Hospital
+          </h2> */}
+          <h2 className="mb-6 text-3xl font-bold text-slate-800 dark:text-white md:text-4xl custom-text-shadow">
+            Welcome to{" "}
+            <span className="text-orange-600">MediCare Hospital</span>
           </h2>
+
           <div className="mb-8 h-1 w-24 bg-blue-600 mx-auto"></div>
           <p
             className="mb-8 text-lg text-gray-700 dark:text-gray-300"

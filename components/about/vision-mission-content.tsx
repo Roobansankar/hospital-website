@@ -54,7 +54,7 @@ const VisionMissionContent = () => {
             data-aos-delay="0"
           >
             <Target className="mb-6 h-16 w-16 text-blue-600" />
-            <h2 className="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
+            <h2 className="mb-6 text-3xl font-bold text-gray-900 dark:text-white ">
               Our Vision
             </h2>
             <div className="mb-6 h-1 w-24 bg-blue-600"></div>
@@ -87,9 +87,14 @@ const VisionMissionContent = () => {
         </div>
 
         <div className="mb-20">
-          <h2 className="mb-6 text-center text-3xl font-bold text-gray-900 dark:text-white">
+          {/* <h2 className="mb-6 text-center text-3xl font-bold text-gray-900 dark:text-white custom-text-shadow">
             Our Core Values
+          </h2> */}
+          <h2 className="mb-6 text-center text-3xl font-bold text-black dark:text-white">
+            Our Core
+            <span className="text-orange-600 drop-shadow-sm"> Values</span>{" "}
           </h2>
+
           <div className="mb-12 mx-auto h-1 w-24 bg-blue-600"></div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {values.map((value, index) => (
@@ -112,13 +117,21 @@ const VisionMissionContent = () => {
         </div>
 
         <div className="rounded-lg bg-blue-50 p-8 dark:bg-blue-950">
-          <h2
-            className="mb-6 text-center text-3xl font-bold text-gray-900 dark:text-white transform-gpu"
+          {/* <h2
+            className="mb-6 text-center text-3xl font-bold text-gray-900 dark:text-white transform-gpu custom-text-shadow"
             data-aos="fade-up"
             data-aos-delay="220"
           >
             Our Commitment to You
+          </h2> */}
+          <h2
+            className="mb-6 text-center text-3xl font-bold text-gray-900 dark:text-white transform-gpu custom-text-shadow"
+            data-aos="fade-up"
+            data-aos-delay="220"
+          >
+            <span className="text-orange-600">Our Commitment</span> to You
           </h2>
+
           <div className="mb-8 mx-auto h-1 w-24 bg-blue-600"></div>
           <div className="mx-auto max-w-3xl space-y-6 text-center">
             <p

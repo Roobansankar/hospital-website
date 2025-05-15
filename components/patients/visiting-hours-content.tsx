@@ -71,14 +71,22 @@ const VisitingHoursContent = () => {
     <section className="py-16 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="mb-16">
-          <h2
-            className="mb-6 text-center text-3xl font-bold text-gray-900 dark:text-white transform-gpu"
+          {/* <h2
+            className="mb-6 text-center text-3xl font-bold text-gray-900 dark:text-white transform-gpu custom-text-shadow "
             data-aos="fade-left"
             data-aos-delay="300"
-            // data-aos-anchor-placement="top-center"
           >
             Visiting Hours by Department
+          </h2> */}
+          <h2
+            className="mb-6 text-center text-3xl font-bold text-gray-900 dark:text-white transform-gpu custom-text-shadow"
+            data-aos="fade-left"
+            data-aos-delay="300"
+          >
+            Visiting{" "}
+            <span className="text-orange-600">Hours by Department</span>
           </h2>
+
           <div className="mb-8 mx-auto h-1 w-24 bg-blue-600"></div>
 
           <div className="overflow-x-auto">
@@ -123,13 +131,21 @@ const VisitingHoursContent = () => {
 
         <div className="mb-16 grid grid-cols-1 gap-8 md:grid-cols-2">
           <div>
-            <h2
+            {/* <h2
               className="mb-6 text-2xl font-bold text-gray-900 dark:text-white"
               data-aos="fade-left"
               data-aos-delay="300"
             >
               Visitor Guidelines
+            </h2> */}
+            <h2
+              className="mb-6 text-2xl font-bold text-gray-900 dark:text-white custom-text-shadow"
+              data-aos="fade-left"
+              data-aos-delay="300"
+            >
+              Visitor <span className="text-orange-600">Guidelines</span>
             </h2>
+
             <div className="mb-6 h-1 w-24 bg-blue-600"></div>
             <ul className="space-y-4">
               {guidelines.map((guideline, index) => (
@@ -202,13 +218,21 @@ const VisitingHoursContent = () => {
         </div>
 
         <div className="rounded-lg bg-blue-50 p-8 dark:bg-blue-950">
-          <h2
-            className="mb-6 text-center text-2xl font-bold text-gray-900 dark:text-white transform-gpu"
+          {/* <h2
+            className="mb-6 text-center text-2xl font-bold text-gray-900 dark:text-white transform-gpu custom-text-shadow"
             data-aos="fade-left"
             data-aos-delay="300"
           >
             Visitor Amenities
+          </h2> */}
+          <h2
+            className="mb-6 text-center text-2xl font-bold text-gray-900 dark:text-white transform-gpu custom-text-shadow"
+            data-aos="fade-left"
+            data-aos-delay="300"
+          >
+            Visitor <span className="text-orange-600">Amenities</span>
           </h2>
+
           <div className="mb-8 mx-auto h-1 w-24 bg-blue-600"></div>
           <div
             className="grid grid-cols-1 gap-8 md:grid-cols-3"

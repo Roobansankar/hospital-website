@@ -58,8 +58,8 @@ const ProfileContent = () => {
           data-aos="fade-up"
         >
           <div data-aos="fade-right" className="transform-gpu">
-            <h2 className="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
-              Our History
+            <h2 className="mb-6 text-3xl font-bold text-gray-900 dark:text-white custom-text-shadow">
+              Our <span className="text-orange-600">History</span>
             </h2>
             <div className="mb-6 h-1 w-24 bg-blue-600"></div>
             <p className="mb-4 text-gray-700 dark:text-gray-300">
@@ -98,10 +98,10 @@ const ProfileContent = () => {
 
         <div className="mb-16">
           <h2
-            className="mb-6 text-center text-3xl font-bold text-gray-900 dark:text-white transform-gpu"
+            className="mb-6 text-center text-3xl font-bold text-gray-900 dark:text-white transform-gpu custom-text-shadow"
             data-aos="fade-up"
           >
-            Our Journey
+            Our<span className="text-orange-600"> Journey</span>
           </h2>
           <div className="mb-12 mx-auto h-1 w-24 bg-blue-600"></div>
           <div className="relative">
@@ -143,10 +143,10 @@ const ProfileContent = () => {
 
         <div className="mb-16">
           <h2
-            className="mb-6 text-center text-3xl font-bold text-gray-900 dark:text-white transform-gpu"
+            className="mb-6 text-center text-3xl font-bold text-gray-900 dark:text-white transform-gpu custom-text-shadow"
             data-aos="fade-up"
           >
-            Key Achievements
+            Key <span className="text-orange-600">Achievements</span>
           </h2>
           <div className="mb-12 mx-auto h-1 w-24 bg-blue-600"></div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -237,8 +237,8 @@ const ProfileContent = () => {
         </div>
 
         <div data-aos="fade-up" className="transform-gpu">
-          <h2 className="mb-6 text-center text-3xl font-bold text-gray-900 dark:text-white">
-            Our Commitment
+          <h2 className="mb-6 text-center text-3xl font-bold text-gray-900 dark:text-white custom-text-shadow">
+            Our <span className="text-orange-600">Commitment</span>
           </h2>
           <div className="mb-12 mx-auto h-1 w-24 bg-blue-600"></div>
           <div className="mx-auto max-w-3xl text-center">

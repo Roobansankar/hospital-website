@@ -178,8 +178,8 @@ const DepartmentContent = ({ department }: DepartmentContentProps) => {
         {/* Overview Section */}
         <div className="mb-16 grid grid-cols-1 gap-12 md:grid-cols-2">
           <div data-aos="fade-right" className="transform-gpu">
-            <h2 className="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
-              Department Overview
+            <h2 className="mb-6 text-3xl font-bold text-gray-900 dark:text-white custom-text-shadow">
+              Department <span className="text-orange-600">Overview</span>
             </h2>
             <div className="mb-6 h-1 w-24 bg-blue-600"></div>
             <p className="mb-6 text-lg text-gray-700 dark:text-gray-300">
@@ -205,10 +205,10 @@ const DepartmentContent = ({ department }: DepartmentContentProps) => {
         {/* Services Section */}
         <div className="mb-16">
           <h2
-            className="mb-6 text-center text-3xl font-bold text-gray-900 dark:text-white transform-gpu"
+            className="mb-6 text-center text-3xl font-bold text-gray-900 dark:text-white transform-gpu custom-text-shadow"
             data-aos="fade-right"
           >
-            Our Services
+            Our <span className="text-orange-600">Services</span>
           </h2>
           <div className="mb-12 mx-auto h-1 w-24 bg-blue-600"></div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -233,10 +233,10 @@ const DepartmentContent = ({ department }: DepartmentContentProps) => {
         {/* Team Section */}
         <div>
           <h2
-            className="mb-6 text-center text-3xl font-bold text-gray-900 dark:text-white transform-gpu"
+            className="mb-6 text-center text-3xl font-bold text-gray-900 dark:text-white transform-gpu custom-text-shadow"
             data-aos="fade-right"
           >
-            Meet Our Team
+            Meet <span className="text-orange-600">Our Team</span>
           </h2>
           <div className="mb-12 mx-auto h-1 w-24 bg-blue-600"></div>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">

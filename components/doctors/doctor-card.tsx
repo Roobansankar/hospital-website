@@ -20,6 +20,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Calendar, Clock, GraduationCap, Award } from "lucide-react";
+import Link from "next/link";
 
 interface Doctor {
   id: number;
@@ -143,8 +144,9 @@ const DoctorCard = ({ doctor }: DoctorCardProps) => {
                     </div>
                   </div>
                 </div>
-
-                <Button className="w-full">Book Appointment</Button>
+                <Link href="/booking">
+                  <Button className="w-full">Book Appointment</Button>
+                </Link>
               </div>
             </DialogContent>
           </Dialog>

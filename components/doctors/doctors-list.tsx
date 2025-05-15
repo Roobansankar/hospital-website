@@ -140,8 +140,8 @@ const DoctorsList = () => {
           className="mb-12 flex flex-col items-center justify-between gap-4 md:flex-row transform-gpu"
           data-aos="fade-up"
         >
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white md:text-3xl transform-gpu">
-            Find Your Doctor
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white md:text-3xl transform-gpu custom-text-shadow text-blue-600">
+            Find <span className="text-orange-600">Your Doctor</span>
           </h2>
           <div className="relative w-full max-w-md ">
             <Search className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" />
